@@ -11,7 +11,7 @@ install:
   - cd unfsd
   - docker build -t cwilko/arm-utils:unfsd .
   - cd ../telegraf
-  - docker build -t cwilko/arm-utils:telegraf telegraf
+  - docker build -t cwilko/arm-utils:telegraf .
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
