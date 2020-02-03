@@ -8,7 +8,9 @@ branches:
     - master
 
 install:
-  - docker build -t cwilko/arm-utils:unfsd unfsd
+  - cd unfsd
+  - docker build -t cwilko/arm-utils:unfsd .
+  - cd ../telegraf
   - docker build -t cwilko/arm-utils:telegraf telegraf
 
 script:
