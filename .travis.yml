@@ -1,0 +1,17 @@
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+install:
+  - docker build -t cwilko/arm-utils:unfsd unfsd
+  - docker build -t cwilko/arm-utils:telegraf telegraf
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push cwilko/arm-utils:unfsd
+  - docker push cwilko/arm-utils:telegraf
