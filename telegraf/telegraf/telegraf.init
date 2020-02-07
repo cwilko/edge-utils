@@ -5,8 +5,8 @@
 
 ### BEGIN INIT INFO
 # Provides:          telegraf
-# Required-Start:    $all
-# Required-Stop:     $remote_fs $syslog
+# Required-Start: $all
+# Required-Stop: $local_fs $network $named $time $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Start telegraf at boot time
