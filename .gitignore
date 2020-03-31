@@ -1,1 +1,2 @@
-bin/*
+arm/bin/*
+mips/bin/*
