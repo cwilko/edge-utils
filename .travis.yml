@@ -13,7 +13,7 @@ install:
   - cd ../telegraf
   - docker build --build-arg VERSION=1.14 -t cwilko/edge-utils:telegraf-arm .
   - cd ../../mips/telegraf
-  - docker build --build-arg VERSION=1.14 -t cwilko/edge-utils:telegraf-mips.
+  - docker build --build-arg VERSION=1.14 -t cwilko/edge-utils:telegraf-mips .
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
