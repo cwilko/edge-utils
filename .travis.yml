@@ -10,9 +10,9 @@ branches:
 install:
   - cd arm/unfsd
   - docker build -t cwilko/edge-utils:unfsd .
-  - cd ../arm/telegraf
+  - cd ../telegraf
   - docker build --build-arg VERSION=1.14 -t cwilko/edge-utils:telegraf-arm .
-  - cd ../mips/telegraf
+  - cd ../../mips/telegraf
   - docker build --build-arg VERSION=1.14 -t cwilko/edge-utils:telegraf-mips.
 
 script:
