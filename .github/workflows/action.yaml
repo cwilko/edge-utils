@@ -10,9 +10,12 @@ jobs:
       matrix:
         include:
           - context: ./arm/telegraf
-            tag: telegraf-arm-v2
+            tag: telegraf-arm-v1.15
           - context: ./mips/telegraf
-            tag: telegraf-mips-v2
+            tag: telegraf-mips-v1.15
+          - context: ./arm/unfsd
+            tag: unfsd-v2
+
     steps:
       -
         name: Checkout
@@ -28,13 +31,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.context }}
-          build-args: VERSION=1.14
+          build-args: VERSION=1.15
           push: true
           tags: ${{ github.repository }}:${{ matrix.tag }}
-      -
-        name: Build and push unfsd
-        uses: docker/build-push-action@v4
-        with:
-          context: ./arm/unfsd
-          push: true
-          tags: ${{ github.repository }}:unfsd
