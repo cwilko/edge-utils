@@ -26,8 +26,7 @@ RUN sed -i '1i%option noyywrap' ./Config/exports.l
 
 RUN make
 
-CMD cd /utils/unfs3
-CMD make install
+CMD ["make", "install"]
 
 
 
