@@ -14,7 +14,7 @@ RUN mkdir -p /utils
 WORKDIR /utils
 
 # NFS Service - UNFS3
-RUN git clone https://github.com/unfs3/unfs3.git
+RUN git clone --branch unfs3-0.9.23 https://github.com/unfs3/unfs3.git
 
 WORKDIR "/utils/unfs3"
 
