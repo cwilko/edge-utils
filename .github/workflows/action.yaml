@@ -13,8 +13,6 @@ jobs:
             tag: telegraf-arm-v2
           - context: ./mips/telegraf
             tag: telegraf-mips-v2
-          - context: ./arm/unfsd
-            tag: unfsd-v2
     steps:
       -
         name: Checkout
@@ -30,5 +28,13 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.context }}
+          build-args: VERSION=1.14
           push: true
           tags: ${{ github.repository }}:${{ matrix.tag }}
+      -
+        name: Build and push unfsd
+        uses: docker/build-push-action@v4
+        with:
+          context: ./arm/unfsd
+          push: true
+          tags: ${{ github.repository }}:unfsd
