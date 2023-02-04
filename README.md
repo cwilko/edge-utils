@@ -17,8 +17,8 @@ After running the above command, the ARM binaries for these utilities can be fou
 
 Aleternatively, run the image directly from Docker Hub, e.g.:
 
-    docker run --rm -v `pwd`/arm/bin:/usr/local/bin cwilko/edge-utils:unfsd
+    docker run --rm -v `pwd`/arm/bin:/usr/local/sbin cwilko/edge-utils:unfsd
     or
-    docker run --rm --build-arg VERSION=<TELEGRAF VERSION> -v `pwd`/mips/bin:/usr/local/sbin cwilko/edge-utils:telgraf
+    docker run --rm -v `pwd`/<ARCH>/bin:/usr/local/bin cwilko/edge-utils:telgraf-<ARCH>-v<TELEGRAF VERSION>
 
 
